@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: fastapi-product-api
+spec:
+  selector:
+    matchLabels:
+      app: fastapi-product-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fastapi-product-api
+    spec:
+      containers:
+        - name: fastapi-product-api
+          image: fastapi_product_api
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+---

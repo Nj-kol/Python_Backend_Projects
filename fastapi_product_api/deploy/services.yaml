@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fastapi-product-api
+spec:
+  selector:
+    app: fastapi-product-api
+  ports:
+    - protocol: TCP
+      port: 8000
+      nodePort: 30274
+  type: NodePort

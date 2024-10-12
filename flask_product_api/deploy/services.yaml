@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: flask-product-api
+spec:
+  selector:
+    app: flask-product-api
+  ports:
+    - protocol: TCP
+      port: 5000
+      nodePort: 30274
+  type: NodePort
